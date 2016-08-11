@@ -2,6 +2,9 @@ Broadway.js
 ===========
 A JavaScript H.264 decoder.
 
+```
+npm install broadwayjs
+```
 
 View a Live Demo:  
 http://mbebenita.github.io/Broadway/foxDemo.html  
@@ -10,8 +13,7 @@ http://mbebenita.github.io/Broadway/treeDemo.html
 
 The video player first needs to download the entire video before it can start playing, thus appearing to be a bit slow at first, so have patience. You can start the video by clicking on each player. The top left player runs on the main thread, the remaining players run in background worker threads.
 
-Use a example node app as template:  
-https://github.com/soliton4/BroadwayStream  
+See `example` folder for example app.
 
 Technical info
 ==============

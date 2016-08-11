@@ -23,25 +23,14 @@ p.decode(<binary>);
 
 
 // universal module definition
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define(["./Decoder", "./YUVCanvas"], factory);
-    } else if (typeof exports === 'object') {
-        // Node. Does not work with strict CommonJS, but
-        // only CommonJS-like environments that support module.exports,
-        // like Node.
-        module.exports = factory(require("./Decoder"), require("./YUVCanvas"));
-    } else {
-        // Browser globals (root is window)
-        root.Player = factory(root.Decoder, root.YUVCanvas);
-    }
-}(this, function (Decoder, WebGLCanvas) {
-  "use strict";
-  
-  
-  var nowValue = Decoder.nowValue;
-  
+"use strict";
+
+module.exports = (function() {
+  var WebGLCanvas = require('./YUVCanvas');
+
+  var nowValue = function(){
+    return (new Date()).getTime();
+  };
   
   var Player = function(parOptions){
     var self = this;
@@ -51,9 +40,9 @@ p.decode(<binary>);
     if (this._config.render === false){
       this.render = false;
     };
-    
-    this.nowValue = nowValue;
-    
+
+    this.Decoder = parOptions.Decoder;
+
     this._config.workerFile = this._config.workerFile || "Decoder.js";
     if (this._config.preserveDrawingBuffer){
       this._config.contextOptions = this._config.contextOptions || {};
@@ -183,10 +172,10 @@ p.decode(<binary>);
           //this.afterRecycle();
         };
       }
-      
+
     }else{
       
-      this.decoder = new Decoder({
+      this.decoder = new this.Decoder({
         rgb: !webgl
       });
       this.decoder.onPictureDecoded = onPictureDecoded;
@@ -328,8 +317,7 @@ p.decode(<binary>);
     }
     
   };
-  
-  return Player;
-  
-}));
 
+  return Player;
+
+})();
