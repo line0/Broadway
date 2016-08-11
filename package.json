@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "main": "./index.js",
   "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/defunctzombie/Broadway"
+  },
   "description": "A JavaScript H.264 decoder",
   "keywords": [
     "h264",
