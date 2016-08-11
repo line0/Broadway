@@ -1,18 +1,18 @@
 {
-    "name": "broadwayjs",
-    "version": "0.0.0",
-    "main": "./index.js",
-    "license": "BSD",
-    "description": "A JavaScript H.264 decoder",
-    "keywords": [
-        "h264",
-        "decoder",
-        "video"
-    ],
-    "files": [
-        "index.js",
-        "Player/Player.js",
-        "Player/Decoder.js",
-        "Player/YUVCanvas.js"
-    ]
+  "name": "broadwayjs",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "license": "BSD",
+  "description": "A JavaScript H.264 decoder",
+  "keywords": [
+    "h264",
+    "decoder",
+    "video"
+  ],
+  "files": [
+    "index.js",
+    "Player/Player.js",
+    "Player/Decoder.js",
+    "Player/YUVCanvas.js"
+  ]
 }
