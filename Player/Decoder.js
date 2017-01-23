@@ -1,5 +1,4 @@
-
-var Decoder = (function() {
+this.Decoder = (function() {
   var nowValue = function(){
     return (new Date()).getTime();
   };
